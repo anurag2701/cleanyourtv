@@ -45,10 +45,10 @@ Nothing broke between batches.
 An empty `live_tv_package` (no tuner) can be pushed as a theme `config.json` with `tools/theme.ps1`,
 so `config.xml` stays at its defaults.
 
-## Third unit (2026-10-24)
+## Fourth unit (2026-10-24)
 
-A third Mi Box S, done on Windows with Claude and a plain-language version of `PROMPT.md`, no terminal
-for the owner. Same build as the first two: `Xiaomi/oneday/oneday:9/PI/3933:user/release-keys`, SDK 28,
+A fourth Mi Box S, done on Windows with Claude and a plain-language version of `PROMPT.md`, no terminal
+for the owner. Same build as the first three: `Xiaomi/oneday/oneday:9/PI/3933:user/release-keys`, SDK 28,
 2 GB RAM, 1920x1080 at 320 dpi, 5 GB `/data`. The launcher is 2.6.0 (`0bb7f7ed`); nothing in `launcher/`
 was changed. The theme is [`examples/xiaomi-mi-box-s/theme/`](../../examples/xiaomi-mi-box-s/theme/README.md).
 
@@ -114,7 +114,7 @@ Two things worth knowing:
 Temurin JDK 17 zip plus the Android command-line tools (`sdkmanager "platforms;android-34"
 "build-tools;34.0.0"`, SDK in `%LOCALAPPDATA%\Android\Sdk`) worked with `JAVA_HOME` set to the JDK.
 
-On the third unit Android Studio's `jbr` was found by the script, but the Gradle wrapper failed with
+On the fourth unit Android Studio's `jbr` was found by the script, but the Gradle wrapper failed with
 `Downloading ... gradle-8.9-bin.zip failed: timeout (10000ms)` on a slow line (twice, also at 120 s).
 `curl -L -C - --retry 20 --retry-all-errors` fetched the zip in about 8 minutes; its SHA-256 matched
 `distributionSha256Sum` in `launcher/gradle/wrapper/gradle-wrapper.properties`. Pointing `distributionUrl` at the
@@ -122,4 +122,4 @@ local file (`file:///C:/.../gradle-8.9-bin.zip`) for that one build let it finis
 put back with `git checkout` afterwards. `tools/venv` is also needed before the script runs
 (`python -m venv tools\venv` then `tools\venv\Scripts\python.exe -m pip install -r tools\requirements.txt`).
 
-Lived with: one day so far on the third unit; still to soak for a few days as CONTRIBUTING.md asks.
+Lived with: one day so far on the fourth unit; still to soak for a few days as CONTRIBUTING.md asks.
