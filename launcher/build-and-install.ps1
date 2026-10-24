@@ -33,8 +33,19 @@ if (-not (Test-Path local.properties)) {
     "sdk.dir=$($sdk -replace '\\', '\\')" | Out-File -Encoding ascii local.properties
 }
 
-.\gradlew.bat assembleRelease -q --console=plain
-if ($LASTEXITCODE -ne 0) { throw 'Gradle build failed' }
+# The helper venv is needed further down (tools\tv.py); create it here instead of failing after the build.
+$venvPython = Join-Path $PSScriptRoot '..\tools\venv\Scripts\python.exe'
+if (-not (Test-Path $venvPython)) {
+    Write-Host 'Creating tools\venv (the helper that talks to the TV)...'
+    python -m venv (Join-Path $PSScriptRoot '..\tools\venv')
+    if ($LASTEXITCODE -ne 0) { throw 'python -m venv failed; install Python 3 first' }
+    & $venvPython -m pip install -q -r (Join-Path $PSScriptRoot '..\tools\requirements.txt')
+    if ($LASTEXITCODE -ne 0) { throw 'pip install -r tools\requirements.txt failed' }
+}
+
+# Builds, and on a failed Gradle download retries with a checked, resumable one (see gradle-fallback.ps1).
+. (Join-Path $PSScriptRoot 'gradle-fallback.ps1')
+Invoke-GradleBuild -Task assembleRelease
 
 $py = '..\tools\venv\Scripts\python.exe'
 # Which app owns Home differs by build; ask the TV, but only accept a launcher we recognise (the answer

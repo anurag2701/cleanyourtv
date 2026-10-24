@@ -7,7 +7,7 @@ name, not a registered brand.
 
 ![LumiFlow on a Mi Box S: glass dock, a darkened photo, stats line](../../../docs/devices/xiaomi-mi-box-s-lumiflow.jpg)
 
-*The name and Wi-Fi network are blurred. The picture behind it is the owner's own photo and is not included.*
+*A screenshot from the TV. The Wi-Fi network name is blurred. The picture behind it is the owner's own photo and is not included; more screenshots are in [the Mi Box guide](../../../docs/devices/xiaomi-mi-box-s.md).*
 
 | Key | Why |
 |---|---|
@@ -30,9 +30,16 @@ tools\theme.ps1 -TvHost <tv ip> examples\xiaomi-mi-box-s\theme
 
 Without pictures the theme still works: Home keeps its plain colour.
 
-On a 2 GB box a full-colour photo is heavy and a bright one drowns the clock and the tiles. What worked on
-the third unit: centre-crop to 1280×720, JPEG at quality 84 (60 to 160 KB each), and darken the picture
-itself (brightness about 25% plus a gradient that gets darker toward the bottom), keeping
-`wallpaper_dim` at 0. Use pictures you have the right to show.
+On a 2 GB box a full-colour photo is heavy and a bright one drowns the clock and the tiles. Let
+`tools/wallpaper_prep.py` do the preparation, HEIC phone photos included:
+
+```powershell
+python -m pip install -r tools\requirements-photos.txt
+python tools\wallpaper_prep.py C:\Users\you\Pictures\trip examples\xiaomi-mi-box-s\theme\wallpapers
+```
+
+It centre-crops to 1280×720, saves JPEGs under 300 KB, and darkens the picture itself (brightness 0.25 plus
+a gradient that gets darker toward the bottom), so `wallpaper_dim` stays at 0. Your originals are not
+touched. Use pictures you have the right to show.
 
 Remove it with `tools\theme.ps1 -TvHost <tv ip> -Reset`.
