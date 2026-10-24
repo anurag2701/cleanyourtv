@@ -52,11 +52,17 @@ for the owner. Same build as the first two: `Xiaomi/oneday/oneday:9/PI/3933:user
 2 GB RAM, 1920x1080 at 320 dpi, 5 GB `/data`. The launcher is 2.6.0 (`0bb7f7ed`); nothing in `launcher/`
 was changed. The theme is [`examples/xiaomi-mi-box-s/theme/`](../../examples/xiaomi-mi-box-s/theme/README.md).
 
-| ![LumiFlow: glass dock over a darkened photo, stats line under the clock](xiaomi-mi-box-s-lumiflow.jpg) | ![The same Home with no wallpaper](xiaomi-mi-box-s-plain-home.jpg) | ![The launcher's Clock screensaver](xiaomi-mi-box-s-clock-screensaver.jpg) |
-|---|---|---|
-| *LumiFlow theme: glass dock, a darkened photo, stats line* | *Plain Home, no wallpaper* | *Clock screensaver (time and date, no pictures)* |
+The result, photographed from the TV itself. LumiFlow rotates the owner's own photos, shuffled, one a minute:
 
-The name and the Wi-Fi network are blurred in the screenshots, and the owner's photos are not shipped.
+| ![LumiFlow with a cloudy sky: glass dock, stats line under the clock](xiaomi-mi-box-s-lumiflow.jpg) | ![LumiFlow with a monastery photo](xiaomi-mi-box-s-lumiflow-monastery.jpg) | ![LumiFlow with a rider on a lake road](xiaomi-mi-box-s-lumiflow-rider.jpg) |
+|---|---|---|
+| *LumiFlow: glass dock, stats line, a darkened photo* | *The next photo in the rotation* | *And the next (greeting name differs: shot before it was renamed)* |
+
+| ![The same Home with no wallpaper](xiaomi-mi-box-s-plain-home.jpg) | ![The launcher's Clock screensaver](xiaomi-mi-box-s-clock-screensaver.jpg) |
+|---|---|
+| *The same Home with no wallpaper* | *Clock screensaver (time and date, no pictures)* |
+
+The Wi-Fi network name is blurred in the screenshots. The photos are the owner's own and are not part of the theme.
 
 What differed from the other units:
 

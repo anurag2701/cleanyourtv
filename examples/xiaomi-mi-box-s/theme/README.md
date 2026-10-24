@@ -7,7 +7,7 @@ name, not a registered brand.
 
 ![LumiFlow on a Mi Box S: glass dock, a darkened photo, stats line](../../../docs/devices/xiaomi-mi-box-s-lumiflow.jpg)
 
-*The name and Wi-Fi network are blurred. The picture behind it is the owner's own photo and is not included.*
+*A screenshot from the TV. The Wi-Fi network name is blurred. The picture behind it is the owner's own photo and is not included; more screenshots are in [the Mi Box guide](../../../docs/devices/xiaomi-mi-box-s.md).*
 
 | Key | Why |
 |---|---|
